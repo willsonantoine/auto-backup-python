@@ -1,0 +1,1 @@
+2025-01-20 16:15:44.743392 - Backup failed: Command 'mysqldump -u root -p your_database > D:/backup\backup_20250120_161544.sql' returned non-zero exit status 1.

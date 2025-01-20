@@ -1,0 +1,45 @@
+# Fichiers spécifiques à Python
+*.pyc
+*~
+__pycache__/
+*.log
+
+# Fichiers d'environnements virtuels
+venv/
+env/
+.venv/
+.env/
+Lib/
+Include/
+
+# Fichiers de build PyInstaller
+build/
+dist/
+*.spec
+
+# Fichiers temporaires du système d'exploitation
+*.bak
+*.tmp
+*.swp
+*.swo
+*.pyi
+*.log
+*.sqlite
+*.db
+
+# Fichiers spécifiques aux IDE et aux éditeurs de texte
+.vscode/
+.idea/
+*.suo
+*.user
+*.bak
+*.pydevproject
+
+# Fichiers de configuration
+config.json
+
+# Fichiers de Logs
+app.log
+
+# Autre fichiers
+*.pyc
