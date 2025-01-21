@@ -6,7 +6,7 @@ import json
 import time
 import threading
 import datetime
-import mysql.connector
+import pymysql
 import io
 import shutil
 import winsound
@@ -250,19 +250,18 @@ class MySQLBackupApp(tk.Tk):
             self.database_combobox.config(values=[])
             return
         try:
-            mydb = mysql.connector.connect(
+             mydb = pymysql.connect(
                 host=hostname,
                 port=int(port),
                 user=username,
                 password=password,
-                auth_plugin='caching_sha2_password'
             )
-            cursor = mydb.cursor()
-            cursor.execute("SHOW DATABASES")
-            databases = [db[0] for db in cursor.fetchall()]
-            self.database_combobox.config(values=databases)
-            mydb.close()
-        except Exception as e:
+             cursor = mydb.cursor()
+             cursor.execute("SHOW DATABASES")
+             databases = [db[0] for db in cursor.fetchall()]
+             self.database_combobox.config(values=databases)
+             mydb.close()
+        except pymysql.Error as e:
             self.database_combobox.config(values=[])
             messagebox.showerror("Error", f"Could not retrieve databases, please check hostname, port, username and password. Error:{e}")
             self.log_message(f"Could not retrieve databases, please check hostname, port, username and password. Error:{e}")
